@@ -4,7 +4,7 @@ import Drawer from "./components/darwer/Darwer";
 import CharsParticle from "./components/particles/CharsParticle";
 import { CgMenuRight } from "react-icons/cg";
 import { MainContext } from "./providers/ContextProvider";
-import { useLocation } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 
 function App() {
   const contextData = useContext(MainContext);
@@ -13,8 +13,8 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="App">
-      <div className="min-h-screen min-w-full flex">
+    <div className="App box-border overflow-hidden">
+      <div className="min-h-screen min-w-full flex flex-col">
         <div className="relative box-border w-full h-40">
           <button
             className="border border-white text-white p-4 rounded-lg shadow-md absolute top-[2%] right-[2%] block lg:hidden"
@@ -25,10 +25,17 @@ function App() {
           <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-5xl font-bold z-10">
             {location.pathname == "/" ? "Contacts" : "Charts and Maps"}
           </h3>
-          <CharsParticle></CharsParticle>
+          <div className="">
+            <CharsParticle></CharsParticle>
+          </div>
         </div>
-        <div className="w-0 lg:w-1/4">{<Drawer></Drawer>}</div>
-        <div className="w-full lg:w-3/4"></div>
+
+        <div className="flex">
+          <div className="w-0 lg:w-1/4">{<Drawer></Drawer>}</div>
+          <div className="w-full lg:w-3/4">
+            <Outlet />
+          </div>
+        </div>
       </div>
     </div>
   );
