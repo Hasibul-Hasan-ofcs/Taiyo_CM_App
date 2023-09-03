@@ -62,4 +62,4 @@ This api is basically implemented to generate dynamic line graph data in this pr
 https://disease.sh/v3/covid-19/countries
 ```
 
-This api is basically country-wise data that shows different types information related to that country and the disease in that country. I have used this one in order to implement React leaflet with info marker in this project.
+This api is basically country-wise data that shows different types of information related to that country and the disease in that country. I have used this one in order to implement React leaflet with info marker in this project.
