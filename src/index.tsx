@@ -24,7 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chartsandmaps",
-        element: <ChartsAndMaps></ChartsAndMaps>,
+        element: (
+          <div className="flex flex-col gap-40 p-8">
+            <ChartsAndMaps></ChartsAndMaps>
+          </div>
+        ),
       },
     ],
   },

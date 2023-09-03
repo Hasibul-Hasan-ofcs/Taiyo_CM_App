@@ -23,7 +23,7 @@ const SimpleLineChart = (props: Props) => {
           labels: dataKey,
           datasets: [
             {
-              label: "# of Calories Lost",
+              label: "Disease Cases",
               // y-axis data plotting values
               data: dataValue,
               fill: false,
