@@ -2,6 +2,7 @@ import React from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./reactLeaflet.css";
+import { Icon } from "leaflet";
 
 // setting the receive type
 interface Props {
@@ -23,6 +24,13 @@ const ReactLeaflet = (props: Props) => {
         {leafletData.map((el: any, indx: number) => (
           <Marker
             position={[el.countryInfo.lat, el.countryInfo.long]}
+            icon={
+              new Icon({
+                iconUrl: "/marker-icon.png",
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+              })
+            }
             key={indx}
           >
             <Popup>
