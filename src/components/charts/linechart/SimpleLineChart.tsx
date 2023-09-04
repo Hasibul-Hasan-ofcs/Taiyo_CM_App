@@ -16,7 +16,7 @@ const SimpleLineChart = (props: Props) => {
   console.log(dataKey, dataValue);
 
   return (
-    <div>
+    <div className="bs_common flex flex-col gap-5 border p-9">
       <Line
         data={{
           // x-axis label values

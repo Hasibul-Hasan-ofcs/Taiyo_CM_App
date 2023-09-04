@@ -37,14 +37,14 @@ const ChartsAndMaps = () => {
   })();
 
   return (
-    <>
+    <div className="py-40 flex flex-col gap-24">
       <SimpleLineChart
         dataKey={dataKey}
         dataValue={dataValue}
       ></SimpleLineChart>
 
       <ReactLeaflet leafletData={leafletData}></ReactLeaflet>
-    </>
+    </div>
   );
 };
 

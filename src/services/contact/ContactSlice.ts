@@ -25,9 +25,7 @@ export const contactSlice = createSlice({
     },
     editContact: (state, action) => {
       const id = action.payload.id;
-
       const foundContact = state.contacts.filter((el) => el.id === id);
-      // return console.log(foundContact);
       if (foundContact) {
         foundContact[0].firstName = action.payload.firstName;
         foundContact[0].lastName = action.payload.lastName;

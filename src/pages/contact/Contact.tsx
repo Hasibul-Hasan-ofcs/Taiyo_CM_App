@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="py-20">
       <Outlet />
     </div>
   );

@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App box-border overflow-hidden">
       <div className="min-h-screen min-w-full flex flex-col">
-        <div className="relative box-border w-full h-40">
+        <div className="fixed top-0 left-0 box-border w-full h-[100px] z-[99994]">
           <button
             className="border border-white text-white p-4 rounded-lg shadow-md absolute top-[2%] right-[2%] block lg:hidden z-[5]"
             onClick={() => setSideBarActiveData && setSideBarActiveData(true)}

@@ -17,7 +17,7 @@ const CharsParticle = () => {
   );
   return (
     <Particles
-      height="160px"
+      height="100px"
       width="100vw"
       id="tsparticles"
       init={particlesInit}
