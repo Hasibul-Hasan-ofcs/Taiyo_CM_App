@@ -22,7 +22,7 @@ function App() {
           >
             <CgMenuRight></CgMenuRight>
           </button>
-          <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-5xl font-bold z-10">
+          <h3 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white  text-lg md:text-5xl font-bold z-10">
             {location.pathname == "/" ? "Contacts" : "Charts and Maps"}
           </h3>
           <div className="sticky">
