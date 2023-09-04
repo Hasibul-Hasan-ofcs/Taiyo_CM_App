@@ -3,8 +3,8 @@ import "./App.css";
 import Drawer from "./components/darwer/Darwer";
 import CharsParticle from "./components/particles/CharsParticle";
 import { CgMenuRight } from "react-icons/cg";
-import { MainContext } from "./providers/ContextProvider";
 import { useLocation, Outlet } from "react-router-dom";
+import { MainContext } from "./providers/context/ContextProvider";
 
 function App() {
   const contextData = useContext(MainContext);
@@ -17,7 +17,7 @@ function App() {
       <div className="min-h-screen min-w-full flex flex-col">
         <div className="relative box-border w-full h-40">
           <button
-            className="border border-white text-white p-4 rounded-lg shadow-md absolute top-[2%] right-[2%] block lg:hidden"
+            className="border border-white text-white p-4 rounded-lg shadow-md absolute top-[2%] right-[2%] block lg:hidden z-[5]"
             onClick={() => setSideBarActiveData && setSideBarActiveData(true)}
           >
             <CgMenuRight></CgMenuRight>

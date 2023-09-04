@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import style from "./drawer.module.css";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import { MainContext } from "../../providers/ContextProvider";
 import { BsBarChartLineFill } from "react-icons/bs";
 import { RiContactsBookFill } from "react-icons/ri";
+import { MainContext } from "../../providers/context/ContextProvider";
 
 const Drawer = () => {
   const contextData = useContext(MainContext);
@@ -56,7 +56,7 @@ const Drawer = () => {
             className={`flex items-center gap-2 border ${style.bs_common}`}
           >
             <RiContactsBookFill></RiContactsBookFill>
-            <span className="text-xl">Contacts</span>
+            <span className="text-xl">Contact</span>
           </Link>
           <Link
             to="/chartsandmaps"

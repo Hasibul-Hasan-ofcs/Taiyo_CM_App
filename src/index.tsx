@@ -6,8 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contact from "./pages/contact/Contact";
 import ChartsAndMaps from "./pages/chartsandmaps/ChartsAndMaps";
-import ContextProvider from "./providers/ContextProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ContextProvider from "./providers/context/ContextProvider";
+import AllContact from "./pages/contact/allcontact/AllContact";
+import AddContact from "./pages/contact/addcontact/AddContact";
+import EditContact from "./pages/contact/editcontact/EditContact";
+import { Provider } from "react-redux";
+import store from "./services/Store";
 
 // QueryClient declaration using tan-stack query
 const queryClient = new QueryClient();
@@ -21,6 +26,20 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Contact></Contact>,
+        children: [
+          {
+            path: "/",
+            element: <AllContact></AllContact>,
+          },
+          {
+            path: "/addcontact",
+            element: <AddContact></AddContact>,
+          },
+          {
+            path: "/editcontact",
+            element: <EditContact></EditContact>,
+          },
+        ],
       },
       {
         path: "/chartsandmaps",
@@ -39,11 +58,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ContextProvider>
-        <RouterProvider router={router} />
-      </ContextProvider>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <ContextProvider>
+          <RouterProvider router={router} />
+        </ContextProvider>
+      </QueryClientProvider>
+    </Provider>
   </React.StrictMode>
 );
 
