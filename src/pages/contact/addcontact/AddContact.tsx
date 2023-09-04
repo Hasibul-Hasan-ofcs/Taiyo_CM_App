@@ -17,13 +17,13 @@ const AddContact = () => {
     const last_name = form.last_name.value;
     const status = form.status.value;
     const length = contacts.length;
-    const dataArray = {
+    const dataObject = {
       id: length + 1,
       firstName: first_name,
       lastName: last_name,
       status: status,
     };
-    dispatch(addContact(dataArray));
+    dispatch(addContact(dataObject));
 
     naviagte("/");
   };
@@ -41,7 +41,7 @@ const AddContact = () => {
             type="text"
             name="first_name"
             id="first_name"
-            className="bs_common border h-11 w-32 lg:w-56"
+            className="bs_common border h-11 w-32 lg:w-56 px-3"
           />
         </div>
         <div className="flex flex-wrap gap-5 items-center">
@@ -50,7 +50,7 @@ const AddContact = () => {
             type="text"
             name="last_name"
             id="last_name"
-            className="bs_common border h-11 w-32 lg:w-56"
+            className="bs_common border h-11 w-32 lg:w-56 px-3"
           />
         </div>
         <div className="flex flex-wrap gap-5 items-center">
